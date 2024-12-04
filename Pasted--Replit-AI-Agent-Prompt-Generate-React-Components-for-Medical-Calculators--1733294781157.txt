@@ -1,0 +1,164 @@
+
+
+### **🔧 Replit AI Agent Prompt: Generate React Components for Medical Calculators**
+
+---
+
+**Objective:**
+Create reusable React components for specific medical calculators. These components should be modular, well-documented, and ready for integration into an existing React application. Each calculator should handle its own state, input validation, and result computation.
+
+**Calculators to Develop:**
+1. **BMI Calculator**
+2. **BMR Calculator**
+3. **Body Surface Area (BSA) Calculator**
+
+*You can add more calculators as needed following the same structure.*
+
+---
+
+**General Requirements for Each Calculator Component:**
+
+1. **Component Structure:**
+   - Each calculator should be a separate React functional component.
+   - Use modern React practices (e.g., hooks) for state management within the component.
+   - Ensure components are self-contained and can be imported easily.
+
+2. **Props:**
+   - Allow customization through props where applicable (e.g., labels, units).
+   - Example props might include `title`, `onCalculate`, etc.
+
+3. **State Management:**
+   - Manage input values and results using React’s `useState` hook.
+   - Implement input validation to ensure users enter valid data (e.g., positive numbers).
+
+4. **Styling:**
+   - Use CSS Modules or Styled-Components for scoped styling.
+   - Ensure the design is clean, responsive, and consistent with standard UI/UX practices.
+
+5. **Functionality:**
+   - Provide input fields for necessary parameters.
+   - Include a "Calculate" button to perform the computation.
+   - Display the result clearly after calculation.
+   - Optionally, include a "Reset" button to clear inputs and results.
+
+6. **Documentation:**
+   - Include comments explaining the logic and structure.
+   - Provide PropTypes for type-checking props (if using PropTypes).
+
+7. **Export:**
+   - Export each component as a default export for easy importing.
+
+---
+
+**Specific Requirements for Each Calculator:**
+
+1. **BMI Calculator (`BMICalculator.jsx`):**
+   - **Inputs:** Weight (kg), Height (cm)
+   - **Calculation Formula:** BMI = weight (kg) / (height (m))²
+   - **Result Display:** Show the BMI value and a category (e.g., Underweight, Normal, Overweight, Obese)
+
+2. **BMR Calculator (`BMRCalculator.jsx`):**
+   - **Inputs:** Age (years), Gender (Male/Female), Weight (kg), Height (cm)
+   - **Calculation Formula:**
+     - For Men: BMR = 10×weight + 6.25×height - 5×age + 5
+     - For Women: BMR = 10×weight + 6.25×height - 5×age - 161
+   - **Result Display:** Show the BMR value in kcal/day
+
+3. **Body Surface Area (BSA) Calculator (`BSACalculator.jsx`):**
+   - **Inputs:** Weight (kg), Height (cm)
+   - **Calculation Formula:** BSA (m²) = √[(height(cm) × weight(kg))/3600]
+   - **Result Display:** Show the BSA value
+
+---
+
+**Example Prompt for Replit AI Agent:**
+
+---
+
+**Title:** Generate React Components for Medical Calculators
+
+**Description:**
+Please create three separate React functional components for the following medical calculators: BMI Calculator, BMR Calculator, and Body Surface Area (BSA) Calculator. Each component should be self-contained, with its own state management, input validation, and calculation logic. The components should be styled using CSS Modules or Styled-Components and be ready for integration into an existing React application.
+
+**Detailed Requirements:**
+
+1. **BMI Calculator (`BMICalculator.jsx`):**
+   - **Inputs:**
+     - Weight in kilograms (input type: number)
+     - Height in centimeters (input type: number)
+   - **Features:**
+     - Validate that inputs are positive numbers.
+     - Calculate BMI using the formula: BMI = weight (kg) / (height (m))²
+     - Display the BMI value with one decimal place.
+     - Show the BMI category based on the calculated value:
+       - Underweight: BMI < 18.5
+       - Normal weight: 18.5 ≤ BMI < 24.9
+       - Overweight: 25 ≤ BMI < 29.9
+       - Obese: BMI ≥ 30
+     - Include "Calculate" and "Reset" buttons.
+
+2. **BMR Calculator (`BMRCalculator.jsx`):**
+   - **Inputs:**
+     - Age in years (input type: number)
+     - Gender (radio buttons: Male, Female)
+     - Weight in kilograms (input type: number)
+     - Height in centimeters (input type: number)
+   - **Features:**
+     - Validate that all inputs are provided and are positive numbers.
+     - Calculate BMR using the Mifflin-St Jeor Equation:
+       - For Men: BMR = 10×weight + 6.25×height - 5×age + 5
+       - For Women: BMR = 10×weight + 6.25×height - 5×age - 161
+     - Display the BMR value in kcal/day with no decimal places.
+     - Include "Calculate" and "Reset" buttons.
+
+3. **Body Surface Area (BSA) Calculator (`BSACalculator.jsx`):**
+   - **Inputs:**
+     - Weight in kilograms (input type: number)
+     - Height in centimeters (input type: number)
+   - **Features:**
+     - Validate that inputs are positive numbers.
+     - Calculate BSA using the formula: BSA = √[(height × weight)/3600]
+     - Display the BSA value with two decimal places in m².
+     - Include "Calculate" and "Reset" buttons.
+
+**Additional Instructions:**
+
+- **Styling:**
+  - Use CSS Modules or Styled-Components for each component to ensure styles are scoped and do not conflict.
+  - Design a clean and user-friendly interface with labeled input fields and buttons.
+  - Ensure responsiveness for various screen sizes.
+
+- **Code Quality:**
+  - Write clean, readable code with appropriate comments.
+  - Use PropTypes for prop type validation if applicable.
+  - Ensure each component is exportable and can be easily imported into other parts of the application.
+
+- **File Structure:**
+  - Create a separate folder for each calculator component.
+  - Each folder should contain:
+    - The main component file (e.g., `BMICalculator.jsx`)
+    - A corresponding CSS or Styled-Components file for styling
+    - Any additional helper files if necessary
+
+**Deliverables:**
+
+- Three React component folders (`BMICalculator`, `BMRCalculator`, `BSACalculator`) each containing the necessary files.
+- Ensure that the components can be imported and used seamlessly in a React application.
+- Provide a brief README or comments within the components explaining how to integrate and use them.
+
+---
+
+**Example Structure:**
+
+```
+/components
+  /BMICalculator
+    BMICalculator.jsx
+    BMICalculator.module.css
+  /BMRCalculator
+    BMRCalculator.jsx
+    BMRCalculator.module.css
+  /BSACalculator
+    BSACalculator.jsx
+    BSACalculator.module.css
+```
